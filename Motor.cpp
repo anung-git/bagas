@@ -13,17 +13,17 @@ Motor::Motor(int pinA, int pinB)
 void Motor::forward()
 {
     digitalWrite(pinA, HIGH);
-    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, LOW);
 }
 void Motor::reverse()
 {
     digitalWrite(pinA, LOW);
-    digitalWrite(pinA, HIGH);
+    digitalWrite(pinB, HIGH);
 }
 void Motor::stop()
 {
     digitalWrite(pinA, LOW);
-    digitalWrite(pinA, LOW);
+    digitalWrite(pinB, LOW);
 }
 Motor::~Motor()
 {
