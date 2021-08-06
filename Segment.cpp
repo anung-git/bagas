@@ -9,7 +9,7 @@ void Segment::setNumber(int number)
     }
 }
 
-void mode(bool aktif)
+void Segment::mode(bool aktif)
 {
     this->aktif = aktif;
 }
