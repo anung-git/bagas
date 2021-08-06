@@ -29,7 +29,7 @@ const unsigned long motorOnDelay = 1000;
 
 //var init
 unsigned long motorLastOn;
-int sensor[] = {limt1, limt2, limt3, limt4, limt5, limt6, limt7};
+uint8_t sensor[] = {limt1, limt2, limt3, limt4, limt5, limt6, limt7};
 int index;
 
 // create object
@@ -56,6 +56,7 @@ void loop()
     {
       index = i + 1;
       segmen.setNumber(index);
+      break;
     }
   }
 

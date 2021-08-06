@@ -1,7 +1,16 @@
 
-#include"Segment.h"
+#include "Segment.h"
 void Segment::setNumber(int number)
 {
+    if (number != this->number)
+    {
+        this->number = number;
+        this->writeSegment(number);
+    }
+}
+void Segment::writeSegment(int number)
+{
+
     digitalWrite(a, HIGH);
     digitalWrite(b, HIGH);
     digitalWrite(c, HIGH);
