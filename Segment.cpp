@@ -8,86 +8,91 @@ void Segment::setNumber(int number)
         this->writeSegment(number);
     }
 }
+
+void mode(bool aktif)
+{
+    this->aktif = aktif;
+}
 void Segment::writeSegment(int number)
 {
 
-    digitalWrite(a, HIGH);
-    digitalWrite(b, HIGH);
-    digitalWrite(c, HIGH);
-    digitalWrite(d, HIGH);
-    digitalWrite(e, HIGH);
-    digitalWrite(f, HIGH);
-    digitalWrite(g, HIGH);
+    digitalWrite(a, (1 - aktif));
+    digitalWrite(b, (1 - aktif));
+    digitalWrite(c, (1 - aktif));
+    digitalWrite(d, (1 - aktif));
+    digitalWrite(e, (1 - aktif));
+    digitalWrite(f, (1 - aktif));
+    digitalWrite(g, (1 - aktif));
     switch (number)
     {
     case 0:
-        digitalWrite(a, LOW);
-        digitalWrite(b, LOW);
-        digitalWrite(c, LOW);
-        digitalWrite(d, LOW);
-        digitalWrite(e, LOW);
-        digitalWrite(f, LOW);
+        digitalWrite(a, aktif);
+        digitalWrite(b, aktif);
+        digitalWrite(c, aktif);
+        digitalWrite(d, aktif);
+        digitalWrite(e, aktif);
+        digitalWrite(f, aktif);
         break;
     case 1:
-        digitalWrite(a, LOW);
-        digitalWrite(b, LOW);
+        digitalWrite(c, aktif);
+        digitalWrite(b, aktif);
         break;
     case 2:
-        digitalWrite(a, LOW);
-        digitalWrite(b, LOW);
-        digitalWrite(d, LOW);
-        digitalWrite(e, LOW);
-        digitalWrite(g, LOW);
+        digitalWrite(a, aktif);
+        digitalWrite(b, aktif);
+        digitalWrite(d, aktif);
+        digitalWrite(e, aktif);
+        digitalWrite(g, aktif);
         break;
     case 3:
-        digitalWrite(a, LOW);
-        digitalWrite(b, LOW);
-        digitalWrite(c, LOW);
-        digitalWrite(d, LOW);
-        digitalWrite(g, LOW);
+        digitalWrite(a, aktif);
+        digitalWrite(b, aktif);
+        digitalWrite(c, aktif);
+        digitalWrite(d, aktif);
+        digitalWrite(g, aktif);
         break;
     case 4:
-        digitalWrite(b, LOW);
-        digitalWrite(c, LOW);
-        digitalWrite(f, LOW);
-        digitalWrite(g, LOW);
+        digitalWrite(b, aktif);
+        digitalWrite(c, aktif);
+        digitalWrite(f, aktif);
+        digitalWrite(g, aktif);
         break;
     case 5:
-        digitalWrite(a, LOW);
-        digitalWrite(c, LOW);
-        digitalWrite(d, LOW);
-        digitalWrite(f, LOW);
-        digitalWrite(g, LOW);
+        digitalWrite(a, aktif);
+        digitalWrite(c, aktif);
+        digitalWrite(d, aktif);
+        digitalWrite(f, aktif);
+        digitalWrite(g, aktif);
         break;
     case 6:
-        digitalWrite(a, LOW);
-        digitalWrite(c, LOW);
-        digitalWrite(d, LOW);
-        digitalWrite(e, LOW);
-        digitalWrite(f, LOW);
-        digitalWrite(g, LOW);
+        digitalWrite(a, aktif);
+        digitalWrite(c, aktif);
+        digitalWrite(d, aktif);
+        digitalWrite(e, aktif);
+        digitalWrite(f, aktif);
+        digitalWrite(g, aktif);
         break;
     case 7:
-        digitalWrite(a, LOW);
-        digitalWrite(b, LOW);
-        digitalWrite(c, LOW);
+        digitalWrite(a, aktif);
+        digitalWrite(b, aktif);
+        digitalWrite(c, aktif);
         break;
     case 8:
-        digitalWrite(a, LOW);
-        digitalWrite(b, LOW);
-        digitalWrite(c, LOW);
-        digitalWrite(d, LOW);
-        digitalWrite(e, LOW);
-        digitalWrite(f, LOW);
-        digitalWrite(g, LOW);
+        digitalWrite(a, aktif);
+        digitalWrite(b, aktif);
+        digitalWrite(c, aktif);
+        digitalWrite(d, aktif);
+        digitalWrite(e, aktif);
+        digitalWrite(f, aktif);
+        digitalWrite(g, aktif);
         break;
     case 9:
-        digitalWrite(a, LOW);
-        digitalWrite(b, LOW);
-        digitalWrite(c, LOW);
-        digitalWrite(d, LOW);
-        digitalWrite(f, LOW);
-        digitalWrite(g, LOW);
+        digitalWrite(a, aktif);
+        digitalWrite(b, aktif);
+        digitalWrite(c, aktif);
+        digitalWrite(d, aktif);
+        digitalWrite(f, aktif);
+        digitalWrite(g, aktif);
         break;
     default:
         break;

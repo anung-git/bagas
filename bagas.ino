@@ -41,6 +41,7 @@ void setup()
 {
   tombolUp.changeMode(FALLING);
   tombolDown.changeMode(FALLING);
+  segmen.mode(HIGH);
   for (int i = 0; i < 7; i++)
   {
     pinMode(sensor[i], INPUT_PULLUP);
