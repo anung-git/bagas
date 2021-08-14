@@ -25,12 +25,10 @@ const int motorB = 11;
 
 const int up = 9;
 const int down = 12;
-const unsigned long motorOnDelay = 1000;
 
 //var init
-unsigned long motorLastOn;
 uint8_t sensor[] = {limt1, limt2, limt3, limt4, limt5, limt6, limt7};
-int index;
+int index, pos;
 
 // create object
 Motor motor = Motor(motorA, motorB);
@@ -45,6 +43,16 @@ void setup()
   for (int i = 0; i < 7; i++)
   {
     pinMode(sensor[i], INPUT_PULLUP);
+  }
+
+  // inisialisai pos
+  for (int i = 0; i < 7; i++)
+  {
+    if (digitalRead(sensor[i]) == LOW)
+    {
+      pos = i + 1;
+      break;
+    }
   }
 }
 
@@ -61,21 +69,34 @@ void loop()
     }
   }
 
-  if (millis() > motorLastOn + motorOnDelay)
+  if (pos == index)
   {
     motor.stop();
   }
 
+  if (pos > index)
+  {
+    motor.forward();
+  }
+
+  if (pos < index)
+  {
+    motor.reverse();
+  }
+
   if (tombolUp.getValue() == LOW)
   {
-
-    motor.forward();
-    motorLastOn = millis();
+    if (++pos > 7)
+    {
+      pos = 7;
+    }
   }
   if (tombolDown.getValue() == LOW)
   {
-    motor.reverse();
-    motorLastOn = millis();
+    if (--pos < 1)
+    {
+      pos = 1;
+    }
   }
   tombolDown.loop();
   tombolUp.loop();
